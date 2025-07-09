@@ -5,12 +5,11 @@ const App = () => {
     const [loading, setLoading] = useState(true);
     const[page,setPage]=useState(1)
 
-    const url = `https://api.themoviedb.org/3/tv/popular?language=en-US&page=${page}`;
+    const url = `https://api.themoviedb.org/3/tv/popular?language=en-US&page=${page}&api_key=${import.meta.env.VITE_MOVIE_API}`;
     const options = {
         method: 'GET',
         headers: {
             accept: 'application/json',
-            Authorization:  `Bearer ${import.meta.env.MOVIE_API}` // Replace with actual token
         }
     };
 
